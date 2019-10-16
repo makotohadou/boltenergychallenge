@@ -5,8 +5,6 @@ A definição de sequência estável é a seguinte:
 2. Se S é estável, então {S} também estável;
 3. Se S e T são estáveis, então a concatenação ST também é estável.
 
-enpoints:
-
-##/bolt/operations##
-
-Recebe uma lista de strings e retorna quantas operações são necessárias para torná-la estável.
+# Endpoints
+## /bolt/operations
+Recebe uma lista de strings e retorna uma lista de Long representando, em ordem, quantas operações são necessárias para torná-las estável.

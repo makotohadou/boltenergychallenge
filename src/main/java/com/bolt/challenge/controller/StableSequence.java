@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bolt.challenge.rules.ChallengeRules;
+import com.bolt.challenge.service.StableSequenceService;
 
 @RestController
 @RequestMapping("/bolt")
 public class StableSequence {
 	
 	@Autowired
-	private ChallengeRules rules;
+	private StableSequenceService service;
 	
 	@PostMapping("/operations")
 	public List<Long> getNumberOfOperations(@RequestBody List<String> inputs) {
-		return inputs.stream().map(i -> rules.operationsNeeded(i)).collect(Collectors.toList());
+		return inputs.stream().map(i -> service.getOperationsNeeded(i)).collect(Collectors.toList());
 		
 	}
 
